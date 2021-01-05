@@ -21,7 +21,7 @@ body, html {
 	margin: 30px auto;
     border-collapse: collapse;
     font-size: 35px;
-}
+}	
 .ptable{
 	margin: 0px 0% 30px 0%;
 }
@@ -39,7 +39,6 @@ th{
 	margin: 20px;
 	display: block;
 }
-
 .wpos{
 	background-color: var(--teal-color);
 	text-align: center;
@@ -51,11 +50,96 @@ table .col{
 	border-bottom: 1px solid #FFFFFF;
 }
 .wpos:hover{
-	background-color: var(--teal-color);
+	/* background-color: var(--teal-color); */
+	cursor: default;
 }
 .wpos:hover td{
 	color: var(--red-color);
 }
 .name {
     text-align: left;
+}
+
+.predBlock {
+	margin: 10px auto;
+	display: block;
+	border:rgb(158, 0, 250) 5px solid;
+	text-align: center;
+	height: 480px;
+}
+.roundBlock {
+	/* background-color: blue; */
+	width: 130px;
+	height: 100%;
+	display: inline-block;
+	margin: 4px;
+	padding: 0;
+	vertical-align: top;
+}
+/* .divBlock {
+	background-color: blue;
+}
+.confBlock {
+	background-color: rgb(98, 135, 255);
+}
+.sbBlock {
+	background-color: rgb(142, 191, 255);
+} */
+.champBlock {
+	/* background-color: rgb(203, 238, 255); */
+	width: 260px;
+}
+.nfc {background-color: var(--teal-color);}
+.afc {background-color: var(--red-color);}
+
+.teamBlock {
+	outline: white solid 3px;
+	background-color: rgba(255, 255, 255, .2);
+	width: 100%;
+	vertical-align: top;
+	background-size: cover;
+	background-position: center;
+}
+.divTeam {
+	height: 25%;
+	line-height: 120px;
+}
+.confTeam {
+	height: 50%;
+	line-height: 240px;
+}
+.sbTeam {
+	height: 100%;
+	line-height: 480px;
+}
+.champTeam {
+	height: 60%;
+	line-height: 288px;	
+	background-color: var(--blue-color);
+}
+.nameBlock {
+	height: 20%;
+}
+.ptsBlock {
+	height: 20%;
+}
+.nameBlock, .ptsBlock {
+	font-size: 30px;
+	line-height: 96px;
+	vertical-align: middle;
+	background-color: var(--blue-color);
+	color: var(--teal-color);
+}
+.teamBlock p {
+	margin: 0;
+	font-size: 40px;
+}
+.champTeam p{
+	font-size: 60px;
+}
+.tGB {
+	background-image: url(GB.png);
+}
+.tKC {
+	background-image: url(KC.png);
 }

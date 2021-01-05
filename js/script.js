@@ -3,7 +3,7 @@ window.onbeforeunload = function () {
 }
 
 function init() {
-	
+	makeBlocks();
 }
 const num_players = 4;
 const DIV_PTS = 3;
@@ -21,10 +21,10 @@ var REAL = [
 ];
 
 var preds_diego = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['WAS', 'NO', 'SEA', 'TEN', 'PIT', 'BUF'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
+	['GB', 'KC'], // SUPER BOWL
+	['KC'] // WINNER
 ];
 var preds_fabian = [
 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
@@ -118,6 +118,48 @@ function points () {
 		// END OF POINTS UPDATE	
 	}
 }
+
+
+// make pred blocks
+function makeBlocks() {
+	console.log(" making blocks ")
+	var players = [diego, fabian, andres];
+	for (j=0; j < players.length; j++) {
+		let p_winners = players[j][1];
+		let plyr = players[j][0];
+
+		let tms = p_winners[0]; // DIVISIONAL
+		for (k=0; k < 6; k++){ 
+			let tm = tms[k]
+			
+			$("."+plyr+"PredBlock .divBlock .t"+k).css("background-image", "url(img/"+tm+".png)");
+		}
+
+		tms = p_winners[1]; // CONFERENCE
+		for (k=0; k < 4; k++){ 
+			let tm = tms[k]
+			
+			$("."+plyr+"PredBlock .confBlock .t"+k).css("background-image", "url(img/"+tm+".png)");
+		}
+
+		tms = p_winners[2]; // SUPER BOWL
+		for (k=0; k < 2; k++){ 
+			let tm = tms[k]
+			
+			$("."+plyr+"PredBlock .sbBlock .t"+k).css("background-image", "url(img/"+tm+".png)");
+		}
+
+		tms = p_winners[3]; // CHAMP
+		let tm = tms[0]
+		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", "url(img/"+tm+".png)");
+		
+		let playerPts = players[j][2] 
+		$("."+plyr+"PredBlock .champBlock .ptsBlock .ptsP").text(playerPts+" PTS");
+
+	}
+}	
+
+
 
 
 
