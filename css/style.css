@@ -38,6 +38,7 @@ th{
     color: var(--blue-color);
 	margin: 20px;
 	display: block;
+	font-size: 80px;
 }
 .wpos{
 	background-color: var(--teal-color);
@@ -61,11 +62,12 @@ table .col{
 }
 
 .predBlock {
-	margin: 10px auto;
+	margin: 80px auto;
 	display: block;
-	border:rgb(158, 0, 250) 5px solid;
+	/* border:rgb(158, 0, 250) 5px solid; */
 	text-align: center;
 	height: 480px;
+	
 }
 .roundBlock {
 	/* background-color: blue; */

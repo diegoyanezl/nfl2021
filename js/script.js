@@ -14,6 +14,10 @@ const SCORE_PTS = 1;
 
 
 var REAL = [
+	['NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // CONFERENCE
+	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'],// SUPER BOWL
+	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // WINNER
 	// ['NO', 'SEA', 'WAS', 'PIT', 'BUF', 'TEN'], // DIVISIONAL
 	// ['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
 	// ['GB', 'KC'], // SUPER BOWL
@@ -21,10 +25,10 @@ var REAL = [
 ];
 
 var preds_diego = [
-	['WAS', 'NO', 'SEA', 'TEN', 'PIT', 'BUF'], // DIVISIONAL
-	['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
-	['GB', 'KC'], // SUPER BOWL
-	['KC'] // WINNER
+	['CHI', 'LAR', 'TB', 'CLE', 'IND', 'BAL'], // DIVISIONAL
+	['LAR', 'TB', 'CLE', 'BAL'], // CONFERENCE
+	['LAR', 'CLE'], // SUPER BOWL
+	['LAR'] // WINNER
 ];
 var preds_fabian = [
 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
@@ -127,31 +131,49 @@ function makeBlocks() {
 	for (j=0; j < players.length; j++) {
 		let p_winners = players[j][1];
 		let plyr = players[j][0];
+		let bg;
 
 		let tms = p_winners[0]; // DIVISIONAL
+		let REALtms = REAL[0];
 		for (k=0; k < 6; k++){ 
 			let tm = tms[k]
-			
-			$("."+plyr+"PredBlock .divBlock .t"+k).css("background-image", "url(img/"+tm+".png)");
+			bg = "url(img/"+tm+"X.png)";
+			if (REALtms.includes(tm)){
+				bg = "url(img/"+tm+".png)";
+			} 
+			$("."+plyr+"PredBlock .divBlock .t"+k).css("background-image", bg);
 		}
 
 		tms = p_winners[1]; // CONFERENCE
+		REALtms = REAL[1];
 		for (k=0; k < 4; k++){ 
 			let tm = tms[k]
-			
-			$("."+plyr+"PredBlock .confBlock .t"+k).css("background-image", "url(img/"+tm+".png)");
+			bg = "url(img/"+tm+"X.png)";
+			if (REALtms.includes(tm)){
+				bg = "url(img/"+tm+".png)";
+			} 			
+			$("."+plyr+"PredBlock .confBlock .t"+k).css("background-image", bg);
 		}
 
 		tms = p_winners[2]; // SUPER BOWL
+		REALtms = REAL[2];
 		for (k=0; k < 2; k++){ 
 			let tm = tms[k]
-			
-			$("."+plyr+"PredBlock .sbBlock .t"+k).css("background-image", "url(img/"+tm+".png)");
+			bg = "url(img/"+tm+"X.png)";
+			if (REALtms.includes(tm)){
+				bg = "url(img/"+tm+".png)";
+			} 			
+			$("."+plyr+"PredBlock .sbBlock .t"+k).css("background-image", bg);
 		}
 
 		tms = p_winners[3]; // CHAMP
+		REALtms = REAL[3];
 		let tm = tms[0]
-		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", "url(img/"+tm+".png)");
+		bg = "url(img/"+tm+"X.png)";
+		if (REALtms.includes(tm)){
+			bg = "url(img/"+tm+".png)";
+		} 
+		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", bg);
 		
 		let playerPts = players[j][2] 
 		$("."+plyr+"PredBlock .champBlock .ptsBlock .ptsP").text(playerPts+" PTS");
