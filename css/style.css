@@ -4,7 +4,7 @@
     --red-color: rgb(255, 71, 105);
 }
 
-body,p,h1,h2,h3,h4,h5,h6 {font-family: 'Raleway', sans-serif; font-weight: 900;}
+body,p,h1,h2,h3,h4,h5,h6 {font-family: 'Shrikhand', sans-serif; font-weight: 400;}
 body, html {
     padding: 0;
     margin: 0;
@@ -13,32 +13,51 @@ body, html {
 
 
 
+.bar {
+	width: 100%;
+	background-color: var(--blue-color);
+	height: 160px;
+	text-align: center;
+}
+.sticky {
+	width: 100%;
+	background-color: var(--blue-color);
 
-
+	position: sticky;
+	top: 0;
+	height: 110px;
+	margin-top: -135px;
+	text-align: center;
+}
+.headin{
+	text-align: center;
+	text-decoration: none;
+    color: var(--teal-color);
+	margin: 20px 0;
+	display: inline;
+	font-size: 100px;
+	line-height: 110px;
+}
+.h2 {
+    color: var(--red-color);
+}
 
 
 .ptable table{
 	margin: 30px auto;
     border-collapse: collapse;
-    font-size: 35px;
+	font-size: 50px;
+	font-weight: 400;
 }	
 .ptable{
 	margin: 0px 0% 30px 0%;
 }
 th, td {
-    padding: 10px;
+    padding: 20px;
 }
 th{
 	background-color: var(--blue-color);
 	color: var(--red-color);
-}
-.headin{
-	text-align: center;
-	text-decoration: none;
-    color: var(--blue-color);
-	margin: 20px;
-	display: block;
-	font-size: 80px;
 }
 .wpos{
 	background-color: var(--teal-color);
@@ -59,6 +78,7 @@ table .col{
 }
 .name {
     text-align: left;
+	font-weight: 400;
 }
 
 .predBlock {
@@ -96,7 +116,6 @@ table .col{
 
 .teamBlock {
 	outline: white solid 3px;
-	background-color: rgba(255, 255, 255, .2);
 	width: 100%;
 	vertical-align: top;
 	background-size: cover;

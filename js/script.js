@@ -4,6 +4,7 @@ window.onbeforeunload = function () {
 
 function init() {
 	makeBlocks();
+	update();
 }
 const num_players = 4;
 const DIV_PTS = 3;
@@ -50,10 +51,10 @@ var preds_papi = [
 ];
 
 
-var diego = ["DIEGO", preds_diego, 0, 0, 0];
-var fabian = ["FABIAN", preds_fabian, 0, 0, 0];
-var andres = ["ANDRES", preds_andres, 0, 0, 0];
-var papi = ["PAPI", preds_papi, 0, 0, 0];
+var diego = ["Diego", preds_diego, 0, 0, 0];
+var fabian = ["Fabian", preds_fabian, 0, 0, 0];
+var andres = ["Andres", preds_andres, 0, 0, 0];
+var papi = ["Papi", preds_papi, 0, 0, 0];
 
 
 function update() {
