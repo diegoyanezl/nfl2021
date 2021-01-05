@@ -1,0 +1,61 @@
+:root {
+    --blue-color: rgb(19, 43, 124);
+    --teal-color: rgb(100, 237, 255);
+    --red-color: rgb(255, 71, 105);
+}
+
+body,p,h1,h2,h3,h4,h5,h6 {font-family: 'Raleway', sans-serif; font-weight: 900;}
+body, html {
+    padding: 0;
+    margin: 0;
+    /* background-color: var(--blue-color); */
+}
+
+
+
+
+
+
+
+.ptable table{
+	margin: 30px auto;
+    border-collapse: collapse;
+    font-size: 35px;
+}
+.ptable{
+	margin: 0px 0% 30px 0%;
+}
+th, td {
+    padding: 10px;
+}
+th{
+	background-color: var(--blue-color);
+	color: var(--red-color);
+}
+.headin{
+	text-align: center;
+	text-decoration: none;
+    color: var(--blue-color);
+	margin: 20px;
+	display: block;
+}
+
+.wpos{
+	background-color: var(--teal-color);
+	text-align: center;
+}
+.wpos td{
+	color: var(--blue-color);
+}
+table .col{
+	border-bottom: 1px solid #FFFFFF;
+}
+.wpos:hover{
+	background-color: var(--teal-color);
+}
+.wpos:hover td{
+	color: var(--red-color);
+}
+.name {
+    text-align: left;
+}
