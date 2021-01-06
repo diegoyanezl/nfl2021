@@ -1,6 +1,6 @@
 :root {
-    --blue-color: rgb(19, 43, 124);
-    --teal-color: rgb(100, 237, 255);
+    --blue-color: rgb(27, 61, 173);
+    --teal-color: rgb(115, 239, 255);
 	--red-color: rgb(255, 71, 105);
 	--full-height: 450px;
 	--half-height: 225px;
@@ -222,6 +222,17 @@ input {
 
 /* FOR SMALL SCREENS */
 @media (max-width:1030px){
+	:root {
+		--full-height: 480px;
+		--half-height: 240px;
+		--fourth-height: 120px;
+		--sixty-height: 288px;
+		--twenty-height: 96px;
+	
+		--col-width: 84px;
+		--double-col-width: 180px;
+	}
+	
 	.headin{
 		font-size: 85px;
 	}
@@ -231,18 +242,26 @@ input {
 		font-weight: 400;
 	}	
 	
-	.predBlock {height: 480px;}
+	.predBlock {height: var(--full-height);}
 
 	.predBlock {margin: 100px auto;}
 
 	.roundBlock {
-		width: 108px;
+		width: var(--col-width);
 	}
 	.champBlock {
 		/* background-color: rgb(203, 238, 255); */
-		width: 220px;
+		width: var(--double-col-width);
 	}
 	.nameBlock p, .ptsBlock p{
 		font-size: 46px;
+	}
+
+	input {
+		width: 80%;
+		text-align: center;	
+	}
+	#bot {
+		margin-bottom: 300px;
 	}
 }
