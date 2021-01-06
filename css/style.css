@@ -1,7 +1,15 @@
 :root {
     --blue-color: rgb(19, 43, 124);
     --teal-color: rgb(100, 237, 255);
-    --red-color: rgb(255, 71, 105);
+	--red-color: rgb(255, 71, 105);
+	--full-height: 450px;
+	--half-height: 225px;
+	--fourth-height: 112.5px;
+	--sixty-height: 270px;
+	--twenty-height: 90px;
+
+	--col-width: 86px;
+	--double-col-width: 180px;
 }
 
 body,p,h1,h2,h3,h4,h5,h6 {font-family: 'Shrikhand', sans-serif; font-weight: 400;}
@@ -55,14 +63,14 @@ body, html {
 .ptable table{
 	margin: 30px auto;
     border-collapse: collapse;
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 400;
 }	
 .ptable{
-	margin: 0px 0% 30px 0%;
+	margin: 0px 0% 20px 0%;
 }
 th, td {
-    padding: 20px;
+    padding: 10px;
 }
 .col{
 	background-color: var(--blue-color);
@@ -95,12 +103,12 @@ th {
 	display: block;
 	/* border:rgb(158, 0, 250) 5px solid; */
 	text-align: center;
-	height: 480px;
+	height: var(--full-height);
 	
 }
 .roundBlock {
 	/* background-color: blue; */
-	width: 130px;
+	width: var(--col-width);
 	height: 100%;
 	display: inline-block;
 	margin: 4px;
@@ -118,7 +126,7 @@ th {
 } */
 .champBlock {
 	/* background-color: rgb(203, 238, 255); */
-	width: 260px;
+	width: var(--double-col-width);
 }
 .nfc {background-color: var(--teal-color);}
 .afc {background-color: var(--red-color);}
@@ -132,19 +140,19 @@ th {
 }
 .divTeam {
 	height: 25%;
-	line-height: 120px;
+	line-height: var(--fourth-height);
 }
 .confTeam {
 	height: 50%;
-	line-height: 240px;
+	line-height: var(--half-height);
 }
 .sbTeam {
 	height: 100%;
-	line-height: 480px;
+	line-height: var(--full-height);
 }
 .champTeam {
 	height: 60%;
-	line-height: 288px;	
+	line-height: var(--sixty-height);	
 	background-color: var(--blue-color);
 }
 .nameBlock {
@@ -155,7 +163,7 @@ th {
 }
 .nameBlock, .ptsBlock {
 	font-size: 30px;
-	line-height: 96px;
+	line-height: var(--twenty-height);
 	vertical-align: middle;
 	background-color: var(--blue-color);
 	color: var(--teal-color);
@@ -174,11 +182,41 @@ th {
 	background-image: url(KC.png);
 }
 
+.submit {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+input {
+	background-color: var(--red-color);
+	border-radius: 10px;
+	color: var(--blue-color);
+	font-family: 'Shrikhand', sans-serif; 
+	font-weight: 400;
+	font-size: 32px;
+	border: var(--blue-color) solid 9px;
+	padding: 10px 40px;
+	width: 60%;
+	text-align: center;
+
+}
 
 
-
-
-
+.gameTeam {
+	height: 50%;
+	/* outline: black 2px dashed; */
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+}
+.wcGameBlock {
+	height: 33.3334%;
+}
+.divGameBlock {
+	height: 50%;
+}
+.confGameBlock {
+	height: 100%;
+}
 
 
 
@@ -203,5 +241,8 @@ th {
 	.champBlock {
 		/* background-color: rgb(203, 238, 255); */
 		width: 220px;
+	}
+	.nameBlock p, .ptsBlock p{
+		font-size: 46px;
 	}
 }
