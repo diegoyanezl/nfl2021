@@ -267,7 +267,7 @@ input {
 
 	/* HORIZONTAL SMALL SCREEN */
     @media (orientation: landscape) {
-        .bar .bar2 {
+        .bar, .bar2 {
           display: none;
         }
       }
