@@ -28,40 +28,40 @@ var REAL = [
 ];
 
 var preds_diego = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
+	['NO', 'KC'], // SUPER BOWL
+	['NO'] // WINNER
 ];
 var preds_fabian = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['NO/', 'SEA', 'TB', 'PIT', 'BUF', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
+	['GB', 'BUF'], // SUPER BOWL
+	['BUF'] // WINNER
 ];
 var preds_andres = [
 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['GB', '', 'KC', ''], // CONFERENCE
+	['', ''], // SUPER BOWL
+	[''] // WINNER
 ];
 var preds_papi = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
+	['GB', 'BUF'], // SUPER BOWL
+	['BUF'] // WINNER
 ];
 var preds_ap = [
 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['GB', '', 'KC', ''], // CONFERENCE
+	['', ''], // SUPER BOWL
+	[''] // WINNER
 ];
 var preds_mami = [
 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB/ ', '/', 'KC/', '/'], // CONFERENCE
-	['/', '/'], // SUPER BOWL
-	['/'] // WINNER
+	['GB', '', 'KC', ''], // CONFERENCE
+	['', ''], // SUPER BOWL
+	[''] // WINNER
 ];
 
 
