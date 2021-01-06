@@ -264,4 +264,11 @@ input {
 	#bot {
 		margin-bottom: 300px;
 	}
+
+	/* HORIZONTAL SMALL SCREEN */
+    @media (orientation: landscape) {
+        .bar .bar2 {
+          display: none;
+        }
+      }
 }
