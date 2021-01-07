@@ -4,7 +4,6 @@ window.onbeforeunload = function () {
 
 function init() {
 	console.log("init");
-	makeBlocks();
 	update();
 }
 
@@ -14,13 +13,13 @@ const SB_PTS = 5;
 const CHAMP_PTS = 7;
 const SCORE_PTS = 1;
 const PLAYERS = [andres, ap, fabian, diego, mami, papi];
-const num_players = PLAYERS.length;
+const num_players = 6;
 
 var REAL = [
 	['NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // CONFERENCE
 	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'],// SUPER BOWL
-	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // WINNER
+	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'] // WINNER
 	// ['NO', 'SEA', 'WAS', 'PIT', 'BUF', 'TEN'], // DIVISIONAL
 	// ['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
 	// ['GB', 'KC'], // SUPER BOWL
@@ -34,16 +33,16 @@ var preds_diego = [
 	['NO'] // WINNER
 ];
 var preds_fabian = [
-	['NO/', 'SEA', 'TB', 'PIT', 'BUF', 'BAL'], // DIVISIONAL
+	['NO', 'SEA', 'TB', 'PIT', 'BUF', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
 	['GB', 'BUF'], // SUPER BOWL
 	['BUF'] // WINNER
 ];
 var preds_andres = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB', '', 'KC', ''], // CONFERENCE
-	['', ''], // SUPER BOWL
-	[''] // WINNER
+	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
+	['GB', 'SEA', 'KC', 'BUF'], // CONFERENCE
+	['SEA', 'KC'], // SUPER BOWL
+	['SEA'] // WINNER
 ];
 var preds_papi = [
 	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
@@ -52,17 +51,24 @@ var preds_papi = [
 	['BUF'] // WINNER
 ];
 var preds_ap = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB', '', 'KC', ''], // CONFERENCE
-	['', ''], // SUPER BOWL
-	[''] // WINNER
+	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
+	['GB', 'SEA', 'KC', 'BUF'], // CONFERENCE
+	['SEA', 'KC'], // SUPER BOWL
+	['SEA'] // WINNER
 ];
 var preds_mami = [
-	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-	['GB', '', 'KC', ''], // CONFERENCE
-	['', ''], // SUPER BOWL
-	[''] // WINNER
+	['NO', 'LAR', 'WAS', 'PIT', 'IND', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
+	['NO', 'KC'], // SUPER BOWL
+	['NO'] // WINNER
 ];
+
+// var preds_TEMP = [
+// 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
+// 	['GB', '', 'KC', ''], // CONFERENCE
+// 	['', ''], // SUPER BOWL
+// 	[''] // WINNER
+// ];
 
 
 var diego = ["Diego", preds_diego, 0, 0, 0];
@@ -70,7 +76,7 @@ var fabian = ["Fabian", preds_fabian, 0, 0, 0];
 var andres = ["Andres", preds_andres, 0, 0, 0];
 var papi = ["Papi", preds_papi, 0, 0, 0];
 var mami = ["Mami", preds_mami, 0, 0, 0];
-var ap = ["Ana Paula", preds_ap, 0, 0, 0];
+var ap = ["AP", preds_ap, 0, 0, 0];
 
 
 function update() {
@@ -79,6 +85,8 @@ function update() {
 
 	// RANKS PLAYERS
 	var ranking = rank();
+	console.log("finished ranking")
+
 
 	// UPDATES STANDINGS
 	for (i=0; i < num_players; i++) {
@@ -87,17 +95,21 @@ function update() {
 		$(".st"+i+" .w").text(ranking[i][3]);
 		$(".st"+i+" .l").text(ranking[i][4]);
 	}
+
+	
+	console.log("gonna make bloxks");
+	makeBlocks();
 }
 
 function rank() {
-	let ranking = [...PLAYERS];
+	let ranking = [andres, ap, fabian, diego, mami, papi];
 
 	ranking.sort(function(a,b){return b[2] - a[2]});
 	return ranking
 }
 
 function points () {
-	var rounds_so_far = REAL.length;
+	let rounds_so_far = REAL.length;
 
 	for (i=0; i < rounds_so_far; i++) {
 		// loop thru every round
@@ -115,12 +127,13 @@ function points () {
 		}
 		
 		// GET WINNERS
-		var winners = REAL[i];
+		let winners = REAL[i];
 
 		// CHECK EACH PLAYER'S RESULT AND AWARD PTS
-		let players = [...PLAYERS];
+		let players = [andres, ap, fabian, diego, mami, papi];
+
 		for (j=0; j < players.length; j++) {
-			var p_winners = players[j][1][i];
+			let p_winners = players[j][1][i];
 			for (k=0; k < p_winners.length; k++){
 				let tm = p_winners[k];
 				if (winners.includes(tm)) {
@@ -136,16 +149,25 @@ function points () {
 
 // make pred blocks
 function makeBlocks() {
-	var players = [...PLAYERS];
-	for (j=0; j < players.length; j++) {
+	console.log("making blocks");
+
+	let players = [ap, fabian, mami, papi];
+	// let players = [andres, ap, fabian, diego, mami, papi];
+	for (j=0; j < 6; j++) {
+		console.log('NEW PLAER = '+players[j]);
 		let p_winners = players[j][1];
 		let plyr = players[j][0];
 		let bg;
+
+
 
 		let tms = p_winners[0]; // DIVISIONAL
 		let REALtms = REAL[0];
 		for (k=0; k < 6; k++){ 
 			let tm = tms[k]
+
+			console.log("tm = " +tm);
+
 			bg = "url(img/"+tm+"X.png)";
 			if (REALtms.includes(tm)){
 				bg = "url(img/"+tm+".png)";
