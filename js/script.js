@@ -5,6 +5,8 @@ window.onbeforeunload = function () {
 function init() {
 	console.log("init");
 	update();
+	makeBlocksIntro();
+	setInfo();
 }
 
 const DIV_PTS = 3;
@@ -15,35 +17,19 @@ const SCORE_PTS = 1;
 const PLAYERS = [andres, ap, fabian, diego, mami, papi];
 const num_players = 6;
 
+var rounds_so_far = 0;
 var REAL = [
 	['NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // CONFERENCE
 	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'],// SUPER BOWL
-	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'] // WINNER
+	['NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'] // WINNER
+	// ['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'] // WINNER
 	// ['NO', 'SEA', 'WAS', 'PIT', 'BUF', 'TEN'], // DIVISIONAL
 	// ['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
 	// ['GB', 'KC'], // SUPER BOWL
 	// ['KC'] // WINNER
 ];
 
-var preds_diego = [
-	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
-	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
-	['NO', 'KC'], // SUPER BOWL
-	['NO'] // WINNER
-];
-var preds_fabian = [
-	['NO', 'SEA', 'TB', 'PIT', 'BUF', 'BAL'], // DIVISIONAL
-	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
-	['GB', 'BUF'], // SUPER BOWL
-	['BUF'] // WINNER
-];
-var preds_andres = [
-	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
-	['GB', 'SEA', 'KC', 'BUF'], // CONFERENCE
-	['SEA', 'KC'], // SUPER BOWL
-	['SEA'] // WINNER
-];
 var preds_papi = [
 	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
@@ -62,6 +48,24 @@ var preds_mami = [
 	['NO', 'KC'], // SUPER BOWL
 	['NO'] // WINNER
 ];
+var preds_diego = [
+	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
+	['NO', 'KC'], // SUPER BOWL
+	['NO'] // WINNER
+];
+var preds_fabian = [
+	['NO', 'SEA', 'TB', 'PIT', 'BUF', 'BAL'], // DIVISIONAL
+	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
+	['GB', 'BUF'], // SUPER BOWL
+	['BUF'] // WINNER
+];
+var preds_andres = [
+	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
+	['GB', 'SEA', 'KC', 'BUF'], // CONFERENCE
+	['SEA', 'KC'], // SUPER BOWL
+	['SEA'] // WINNER
+];
 
 // var preds_TEMP = [
 // 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
@@ -71,12 +75,12 @@ var preds_mami = [
 // ];
 
 
-var diego = ["Diego", preds_diego, 0, 0, 0];
-var fabian = ["Fabian", preds_fabian, 0, 0, 0];
-var andres = ["Andres", preds_andres, 0, 0, 0];
 var papi = ["Papi", preds_papi, 0, 0, 0];
 var mami = ["Mami", preds_mami, 0, 0, 0];
 var ap = ["AP", preds_ap, 0, 0, 0];
+var diego = ["Diego", preds_diego, 0, 0, 0];
+var fabian = ["Fabian", preds_fabian, 0, 0, 0];
+var andres = ["Andres", preds_andres, 0, 0, 0];
 
 
 function update() {
@@ -85,8 +89,6 @@ function update() {
 
 	// RANKS PLAYERS
 	var ranking = rank();
-	console.log("finished ranking")
-
 
 	// UPDATES STANDINGS
 	for (i=0; i < num_players; i++) {
@@ -95,10 +97,6 @@ function update() {
 		$(".st"+i+" .w").text(ranking[i][3]);
 		$(".st"+i+" .l").text(ranking[i][4]);
 	}
-
-	
-	console.log("gonna make bloxks");
-	makeBlocks();
 }
 
 function rank() {
@@ -109,7 +107,6 @@ function rank() {
 }
 
 function points () {
-	let rounds_so_far = REAL.length;
 
 	for (i=0; i < rounds_so_far; i++) {
 		// loop thru every round
@@ -130,15 +127,15 @@ function points () {
 		let winners = REAL[i];
 
 		// CHECK EACH PLAYER'S RESULT AND AWARD PTS
-		let players = [andres, ap, fabian, diego, mami, papi];
+		let playersList = [andres, ap, fabian, diego, mami, papi];
 
-		for (j=0; j < players.length; j++) {
-			let p_winners = players[j][1][i];
+		for (j=0; j < playersList.length; j++) {
+			let p_winners = playersList[j][1][i];
 			for (k=0; k < p_winners.length; k++){
 				let tm = p_winners[k];
 				if (winners.includes(tm)) {
-					players[j][2] += round_pts;
-					players[j][3] += 1;
+					playersList[j][2] += round_pts;
+					playersList[j][3] += 1;
 				}
 			}
 		}
@@ -146,17 +143,11 @@ function points () {
 	}
 }
 
-
-// make pred blocks
-function makeBlocks() {
-	console.log("making blocks");
-
-	let players = [ap, fabian, mami, papi];
-	// let players = [andres, ap, fabian, diego, mami, papi];
+function makeBlocksIntro() {
+	let playersList = [andres, ap, fabian, diego, mami, papi];
 	for (j=0; j < 6; j++) {
-		console.log('NEW PLAER = '+players[j]);
-		let p_winners = players[j][1];
-		let plyr = players[j][0];
+		let p_winners = playersList[j][1];
+		let plyr = playersList[j][0];
 		let bg;
 
 
@@ -165,9 +156,6 @@ function makeBlocks() {
 		let REALtms = REAL[0];
 		for (k=0; k < 6; k++){ 
 			let tm = tms[k]
-
-			console.log("tm = " +tm);
-
 			bg = "url(img/"+tm+"X.png)";
 			if (REALtms.includes(tm)){
 				bg = "url(img/"+tm+".png)";
@@ -206,13 +194,19 @@ function makeBlocks() {
 		} 
 		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", bg);
 		
-		let playerPts = players[j][2] 
+		let playerPts = playersList[j][2] 
 		$("."+plyr+"PredBlock .champBlock .ptsBlock .ptsP").text(playerPts+" PTS");
 
 	}
-}	
+}
 
-
+function setInfo() {
+	$(".ptsWc").text(DIV_PTS+" Pts");
+	$(".ptsDiv").text(CONF_PTS+" Pts");
+	$(".ptsConf").text(SB_PTS+" Pts");
+	$(".ptsSB").text(CHAMP_PTS+" Pts");
+	$(".ptsScore").text(SCORE_PTS+" Pt");
+}
 
 // SCORE PREDICTIONS
 var scores_diego = [

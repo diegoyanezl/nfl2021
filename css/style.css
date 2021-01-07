@@ -2,14 +2,25 @@
     --blue-color: rgb(19, 46, 138);
     --teal-color: rgb(115, 239, 255);
 	--red-color: rgb(255, 71, 105);
-	--full-height: 450px;
-	--half-height: 225px;
-	--fourth-height: 112.5px;
-	--sixty-height: 270px;
-	--twenty-height: 90px;
+	
+	--full-height: 480px;
+	--half-height: 240px;
+	--fourth-height: 120px;
+	--sixty-height: 288px;
+	--twenty-height: 96px;
 
-	--col-width: 86px;
+	--col-width: 84px;
 	--double-col-width: 180px;
+
+
+	--full-height2: 450px;
+	--half-height2: 225px;
+	--fourth-height2: 112.5px;
+	--sixty-height2: 270px;
+	--twenty-height2: 90px;
+
+	--col-width2: 86px;
+	--double-col-width2: 180px;
 }
 
 body,p,h1,h2,h3,h4,h5,h6 {font-family: 'Shrikhand', sans-serif; font-weight: 400;}
@@ -223,6 +234,22 @@ input {
 	padding-bottom: 1px;
 }
 
+.info {
+	display: block;
+	width: 90%;
+	font-size: 50px;
+	color: var(--blue-color);
+	text-align: center;
+	margin: auto;
+}
+.num {
+	color: var(--red-color);
+}
+
+.info span {
+	text-align: center;
+	/* display: block; */
+}
 
 /* FOR SMALL SCREENS */
 @media (max-width:1030px){
@@ -233,7 +260,7 @@ input {
 		--sixty-height: 288px;
 		--twenty-height: 96px;
 	
-		--col-width: 84px;
+		--col-width: 120px;
 		--double-col-width: 180px;
 	}
 	
@@ -258,7 +285,7 @@ input {
 		width: var(--double-col-width);
 	}
 	.nameBlock p, .ptsBlock p{
-		font-size: 46px;
+		font-size: 38px;
 	}
 
 	input {
