@@ -1,4 +1,4 @@
-var rounds_so_far = 0; // after wc-1, after div-2, after conf-3, after sb-4
+var rounds_so_far = 2; // after wc-1, after div-2, after conf-3, after sb-4
 var REAL = [
 	[ // DIVISIONAL TEAMS
 		'nfcWorst', 
