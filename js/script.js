@@ -61,7 +61,7 @@ var preds_fabian = [
 	['BUF'] // WINNER
 ];
 var preds_andres = [
-	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
+	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
 	['GB', 'SEA', 'KC', 'BUF'], // CONFERENCE
 	['SEA', 'KC'], // SUPER BOWL
 	['SEA'] // WINNER
