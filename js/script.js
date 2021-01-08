@@ -16,17 +16,24 @@ var REAL = [
 		'nfc1', 
 		'nfc2', 
 		'afc1', 
-		'afc2'
+		'afc2',
 		// DELETE TEAM WHEN THEY LOSE
 		// DELETE ALL AFTER ROUND
-
+		'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
+		'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
 	], 
 	[ // SUPER BOWL TEAMS
 		'nfc1', 
-		'afc1'
+		'afc1',
+		// DELETE ALL AFTER ROUND
+		'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
+		'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
 	],
 	[ // WINNER
-		'winner'
+		'winner',
+		// DELETE ALL AFTER ROUND
+		'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
+		'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
 	] 
 	// NFC ['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB']
 	// AFC ['KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL']
