@@ -41,7 +41,7 @@ let games = [
     [0, 0, 2] // 12 SB
 ]
 function initPicks() {
-    console.log(" init picks ");
+    console.log("...Initializing 'make_picks.js'");
     updateBoardWc();
 }
 
@@ -181,7 +181,6 @@ function updateBoardDiv() {
 }
 
 function updateBoardConf() {
-    console.log(" updating CONFS");
     let sb_teamsNFC = [];
     let sb_teamsAFC = [];
 
