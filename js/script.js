@@ -1,3 +1,38 @@
+var rounds_so_far = 0;
+var REAL = [
+	[ // DIVISIONAL TEAMS
+		'nfcWorst', 
+		'nfc2', 
+		'nfc3', 
+		'afcWorst', 
+		'afc2', 
+		'afc3',
+		// DELETE TEAM WHEN THEY LOSE
+		// DELETE ALL AFTER ROUND
+		'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
+		'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
+	], 
+	[ // CONFERENCE TEAMS
+		'nfc1', 
+		'nfc2', 
+		'afc1', 
+		'afc2'
+		// DELETE TEAM WHEN THEY LOSE
+		// DELETE ALL AFTER ROUND
+
+	], 
+	[ // SUPER BOWL TEAMS
+		'nfc1', 
+		'afc1'
+	],
+	[ // WINNER
+		'winner'
+	] 
+	// NFC ['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB']
+	// AFC ['KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL']
+];
+
+
 window.onbeforeunload = function () {
 	window.scrollTo(0, 0);
 }
@@ -18,17 +53,7 @@ const PLAYERS = [andres, ap, fabian, diego, mami, papi];
 const num_players = 6;
 
 var rounds_so_far = 0;
-var REAL = [
-	['NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // DIVISIONAL
-	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'], // CONFERENCE
-	['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'],// SUPER BOWL
-	['NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'] // WINNER
-	// ['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB', 'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'] // WINNER
-	// ['NO', 'SEA', 'WAS', 'PIT', 'BUF', 'TEN'], // DIVISIONAL
-	// ['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
-	// ['GB', 'KC'], // SUPER BOWL
-	// ['KC'] // WINNER
-];
+
 
 var preds_papi = [
 	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
