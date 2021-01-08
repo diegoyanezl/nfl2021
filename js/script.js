@@ -31,31 +31,31 @@ var REAL = [
 ];
 
 var preds_papi = [
-	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
+	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
 	['GB', 'BUF'], // SUPER BOWL
 	['BUF'] // WINNER
 ];
 var preds_ap = [
-	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
+	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'TEN'], // DIVISIONAL
 	['GB', 'SEA', 'KC', 'BUF'], // CONFERENCE
 	['SEA', 'KC'], // SUPER BOWL
 	['SEA'] // WINNER
 ];
 var preds_mami = [
-	['NO', 'LAR', 'WAS', 'PIT', 'IND', 'BAL'], // DIVISIONAL
+	['WAS', 'NO', 'LAR', 'IND', 'PIT', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'PIT'], // CONFERENCE
 	['NO', 'KC'], // SUPER BOWL
 	['NO'] // WINNER
 ];
 var preds_diego = [
-	['NO', 'SEA', 'TB', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
+	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
 	['NO', 'KC'], // SUPER BOWL
 	['NO'] // WINNER
 ];
 var preds_fabian = [
-	['NO', 'SEA', 'TB', 'PIT', 'BUF', 'BAL'], // DIVISIONAL
+	['TB', 'NO', 'SEA', 'BAL', 'BUF', 'PIT'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
 	['GB', 'BUF'], // SUPER BOWL
 	['BUF'] // WINNER
