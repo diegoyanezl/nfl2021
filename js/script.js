@@ -1,4 +1,4 @@
-var rounds_so_far = 0;
+var rounds_so_far = 0; // after wc-1, after div-2, after conf-3, after sb-4
 var REAL = [
 	[ // DIVISIONAL TEAMS
 		'nfcWorst', 
@@ -182,7 +182,7 @@ function makeBlocksIntro() {
 		for (k=0; k < 6; k++){ 
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
-			if (REALtms.includes(tm)){
+			if (REALtms.includes(tm) || rounds_so_far < 1){
 				bg = "url(img/"+tm+".png)";
 			} 
 			$("."+plyr+"PredBlock .divBlock .t"+k).css("background-image", bg);
@@ -193,7 +193,7 @@ function makeBlocksIntro() {
 		for (k=0; k < 4; k++){ 
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
-			if (REALtms.includes(tm)){
+			if (REALtms.includes(tm) || rounds_so_far < 2){
 				bg = "url(img/"+tm+".png)";
 			} 			
 			$("."+plyr+"PredBlock .confBlock .t"+k).css("background-image", bg);
@@ -204,7 +204,7 @@ function makeBlocksIntro() {
 		for (k=0; k < 2; k++){ 
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
-			if (REALtms.includes(tm)){
+			if (REALtms.includes(tm) || rounds_so_far < 3){
 				bg = "url(img/"+tm+".png)";
 			} 			
 			$("."+plyr+"PredBlock .sbBlock .t"+k).css("background-image", bg);
@@ -214,7 +214,7 @@ function makeBlocksIntro() {
 		REALtms = REAL[3];
 		let tm = tms[0]
 		bg = "url(img/"+tm+"X.png)";
-		if (REALtms.includes(tm)){
+		if (REALtms.includes(tm) || rounds_so_far < 4){
 			bg = "url(img/"+tm+".png)";
 		} 
 		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", bg);
