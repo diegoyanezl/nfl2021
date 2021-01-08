@@ -31,6 +31,7 @@ var REAL = [
 	// NFC ['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB']
 	// AFC ['KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL']
 ];
+console.log('VERSION: '+rounds_so_far+' -- '+Math.random());
 
 
 window.onbeforeunload = function () {
