@@ -183,6 +183,10 @@ function makeBlocksIntro() {
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
 			if (REALtms.includes(tm) || rounds_so_far < 1){
+
+				console.log("team is in: "+REALtms.includes(tm))
+				console.log("round is under 1: "+(rounds_so_far < 1))
+
 				bg = "url(img/"+tm+".png)";
 			} 
 			$("."+plyr+"PredBlock .divBlock .t"+k).css("background-image", bg);
@@ -194,6 +198,10 @@ function makeBlocksIntro() {
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
 			if (REALtms.includes(tm) || rounds_so_far < 2){
+
+				console.log("team is in: "+REALtms.includes(tm))
+				console.log("round is under 2: "+(rounds_so_far < 2))
+
 				bg = "url(img/"+tm+".png)";
 			} 			
 			$("."+plyr+"PredBlock .confBlock .t"+k).css("background-image", bg);
