@@ -1,4 +1,11 @@
 var rounds_so_far = 2; // after wc-1, after div-2, after conf-3, after sb-4
+=======
+var rounds_so_far = 0; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
+var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
+	'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
+	'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
+];
+>>>>>>> Stashed changes
 var REAL = [
 	[ // DIVISIONAL TEAMS
 		'nfcWorst', 
@@ -7,38 +14,17 @@ var REAL = [
 		'afcWorst', 
 		'afc2', 
 		'afc3',
-		// DELETE TEAM WHEN THEY LOSE
-		// DELETE ALL AFTER ROUND
-		'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
-		'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
 	], 
 	[ // CONFERENCE TEAMS
 		'nfc1', 
 		'nfc2', 
 		'afc1', 
-		'afc2',
-		// DELETE TEAM WHEN THEY LOSE
-		// DELETE ALL AFTER ROUND
-		'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
-		'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
+		'afc2'
 	], 
-	[ // SUPER BOWL TEAMS
-		'nfc1', 
-		'afc1',
-		// DELETE ALL AFTER ROUND
-		'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
-		'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
-	],
-	[ // WINNER
-		'winner',
-		// DELETE ALL AFTER ROUND
-		'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
-		'KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL'
-	] 
-	// NFC ['GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB']
-	// AFC ['KC', 'PIT', 'CLE', 'BUF', 'IND', 'TEN', 'BAL']
+	['nfcSB', 'afcSB'],
+	['winner'] 
 ];
-console.log('VERSION: '+rounds_so_far+' -- '+Math.random());
+console.log('VERSION: '+rounds_so_far+' --'+Math.random());
 
 
 window.onbeforeunload = function () {
@@ -60,7 +46,6 @@ const SCORE_PTS = 1;
 const PLAYERS = [andres, ap, fabian, diego, mami, papi];
 const num_players = 6;
 
-var rounds_so_far = 0;
 
 
 var preds_papi = [
@@ -190,7 +175,7 @@ function makeBlocksIntro() {
 		for (k=0; k < 6; k++){ 
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
-			if (REALtms.includes(tm) || rounds_so_far < 1){
+			if (REALtms.includes(tm) || ALIVEtms.includes(tm)){
 				bg = "url(img/"+tm+".png)";
 			} 
 			$("."+plyr+"PredBlock .divBlock .t"+k).css("background-image", bg);
@@ -201,7 +186,7 @@ function makeBlocksIntro() {
 		for (k=0; k < 4; k++){ 
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
-			if (REALtms.includes(tm) || rounds_so_far < 2){
+			if (REALtms.includes(tm) || ALIVEtms.includes(tm)){
 				bg = "url(img/"+tm+".png)";
 			} 			
 			$("."+plyr+"PredBlock .confBlock .t"+k).css("background-image", bg);
@@ -212,7 +197,7 @@ function makeBlocksIntro() {
 		for (k=0; k < 2; k++){ 
 			let tm = tms[k]
 			bg = "url(img/"+tm+"X.png)";
-			if (REALtms.includes(tm) || rounds_so_far < 3){
+			if (REALtms.includes(tm) || ALIVEtms.includes(tm)){
 				bg = "url(img/"+tm+".png)";
 			} 			
 			$("."+plyr+"PredBlock .sbBlock .t"+k).css("background-image", bg);
@@ -222,7 +207,11 @@ function makeBlocksIntro() {
 		REALtms = REAL[3];
 		let tm = tms[0]
 		bg = "url(img/"+tm+"X.png)";
-		if (REALtms.includes(tm) || rounds_so_far < 4){
+		console.log("real teams: "+REALtms);
+		console.log("picked teams: "+tms);
+		console.log("rds: "+rounds_so_far);
+		if (REALtms.includes(tm) || ALIVEtms.includes(tm)){
+			console.log("passed");
 			bg = "url(img/"+tm+".png)";
 		} 
 		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", bg);
