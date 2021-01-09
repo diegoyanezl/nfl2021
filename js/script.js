@@ -21,6 +21,25 @@ var REAL = [
 	['nfcSB', 'afcSB'],
 	['winner'] 
 ];
+var REALscores = [
+	[['BUF','IND'], 27, 24],
+	[['SEA','LAR'], 0, 0],
+	[['WAS','TB'], 0, 0],
+	[['TEN','BAL'], 0, 0],
+	[['NO','CHI'], 0, 0],
+	[['PIT','CLE'], 0, 0],
+
+	[['GB',''], 0, 0],
+	[['',''], 0, 0],
+	[['KC',''], 0, 0],
+	[['',''], 0, 0],
+
+	[['',''], 0, 0],
+	[['',''], 0, 0],
+
+	[['',''], 0, 0]
+];
+
 console.log('VERSION: '+rounds_so_far+' --'+Math.random());
 
 
@@ -45,6 +64,117 @@ const num_players = 6;
 
 
 
+// SCORE PREDICTIONS
+// [ game(for easier inputing), score dif(+Home win, -Away win), total pts(tiebreaker) ]
+var scores_andres = [
+	['BUF/IND', 10, 0],
+	['SEA/LAR', 3, 57],
+	['WAS/TB', 100, 1000],
+	['TEN/BAL', 100, 1000],
+	['NO/CHI', 100, 1000],
+	['PIT/CLE', 100, 1000],
+
+	['GB/', 100, 1000],
+	['/', 100, 1000],
+	['KC/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000]
+];
+var scores_ap = [
+	['BUF/IND', 12, 0],
+	['SEA/LAR', 100, 1000],
+	['WAS/TB', 100, 1000],
+	['TEN/BAL', 100, 1000],
+	['NO/CHI', 100, 1000],
+	['PIT/CLE', 100, 1000],
+
+	['GB/', 100, 1000],
+	['/', 100, 1000],
+	['KC/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000]
+];
+var scores_fabian = [
+	['BUF/IND', 10, 0],
+	['SEA/LAR', 11, 37],
+	['WAS/TB', 100, 1000],
+	['TEN/BAL', 100, 1000],
+	['NO/CHI', 100, 1000],
+	['PIT/CLE', 100, 1000],
+
+	['GB/', 100, 1000],
+	['/', 100, 1000],
+	['KC/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000]
+];
+var scores_diego = [
+	['BUF/IND', 13, 0],
+	['SEA/LAR', 4, 27],
+	['WAS/TB', -10, 35],
+	['TEN/BAL', 3, 41],
+	['NO/CHI', 17, 38],
+	['PIT/CLE', -4, 32],
+
+	['GB/', 100, 1000],
+	['/', 100, 1000],
+	['KC/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000]
+];
+var scores_mami = [
+	['BUF/IND', 20, 0],
+	['SEA/LAR', 16, 44],
+	['WAS/TB', 100, 1000],
+	['TEN/BAL', 100, 1000],
+	['NO/CHI', 100, 1000],
+	['PIT/CLE', 100, 1000],
+
+	['GB/', 100, 1000],
+	['/', 100, 1000],
+	['KC/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000]
+];
+var scores_papi = [
+	['BUF/IND', 14, 68],
+	['SEA/LAR', 11, 57],
+	['WAS/TB', 100, 1000],
+	['TEN/BAL', 100, 1000],
+	['NO/CHI', 100, 1000],
+	['PIT/CLE', 100, 1000],
+
+	['GB/', 100, 1000],
+	['/', 100, 1000],
+	['KC/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000],
+	['/', 100, 1000],
+
+	['/', 100, 1000]
+];
+// TEAM PREDICTIONS
 var preds_papi = [
 	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
 	['GB', 'NO', 'KC', 'BUF'], // CONFERENCE
@@ -90,12 +220,13 @@ var preds_andres = [
 // ];
 
 
-var papi = ["Papi", preds_papi, 0, 0, 0];
-var mami = ["Mami", preds_mami, 0, 0, 0];
-var ap = ["AP", preds_ap, 0, 0, 0];
-var diego = ["Diego", preds_diego, 0, 0, 0];
-var fabian = ["Fabian", preds_fabian, 0, 0, 0];
-var andres = ["Andres", preds_andres, 0, 0, 0];
+// var = ["Name", preds_name, Pts, TeamWins, ScoreWins, scores_name];
+var papi = ["Papi", preds_papi, 0, 0, 0, scores_papi];
+var mami = ["Mami", preds_mami, 0, 0, 0, scores_mami];
+var ap = ["AP", preds_ap, 0, 0, 0, scores_ap];
+var diego = ["Diego", preds_diego, 0, 0, 0, scores_diego];
+var fabian = ["Fabian", preds_fabian, 0, 0, 0, scores_fabian];
+var andres = ["Andres", preds_andres, 0, 0, 0, scores_andres];
 
 
 function update() {
@@ -156,6 +287,7 @@ function points () {
 		}
 		// END OF POINTS UPDATE	
 	}
+	scorePoints();
 }
 
 function makeBlocksIntro() {
@@ -204,11 +336,10 @@ function makeBlocksIntro() {
 		REALtms = REAL[3];
 		let tm = tms[0]
 		bg = "url(img/"+tm+"X.png)";
-		console.log("real teams: "+REALtms);
-		console.log("picked teams: "+tms);
-		console.log("rds: "+rounds_so_far);
+		// console.log("real teams: "+REALtms);
+		// console.log("picked teams: "+tms);
+		// console.log("rds: "+rounds_so_far);
 		if (REALtms.includes(tm) || ALIVEtms.includes(tm)){
-			console.log("passed");
 			bg = "url(img/"+tm+".png)";
 		} 
 		$("."+plyr+"PredBlock .champBlock .champTeam").css("background-image", bg);
@@ -226,24 +357,150 @@ function setInfo() {
 	$(".ptsConf").text(SB_PTS+" Pts");
 	$(".ptsSB").text(CHAMP_PTS+" Pts");
 	$(".ptsScore").text(SCORE_PTS+" Pt");
+
+	showScorePreds();
 }
 
-// SCORE PREDICTIONS
-var scores_diego = [
-	{'BUF/IND': 0},
-	{'SEA/LAR': 0},
-	{'WAS/TB': 0},
-	{'TEN/BAL': 0},
-	{'NO/CHI': 0},
-	{'PIT/CLE': 0},
 
-	{'GB/': 0},
-	{'/': 0},
-	{'KC/': 0},
-	{'/': 0},
+function scorePoints() {
+	console.log(" ");
+	console.log("_______ ");
+	console.log("RUNNING SCORE POINTS");
+	console.log("--------- ");
+	console.log(" ");
+	for (i=0; i < REALscores.length; i++) {
+		let game = REALscores[i];
+		let realDif = game[1] - game[2];
+		let realTot = game[1] + game[2];
+		console.log(" ");
+		console.log("_______ ");
+		console.log("CHECKING GAME "+i);
+		if (realTot != 0) { // only check finished games
+			console.log("continuing GAME "+i);
+			console.log("REALdIF "+realDif);
+			
+			let playersList = [andres, ap, fabian, diego, mami, papi];
+			// console.log("1==pl  "+playersList);
+			let difWinners = [];
+			let bestGap = 1000;
+			for (j=0; j < playersList.length; j++) {
+				let pDif = playersList[j][5][i][1];
+				let gap = Math.abs(realDif - pDif);
+				if (gap <= bestGap) {
+					bestGap = gap;
+				}
+			}
+			for (j=0; j < playersList.length; j++) {
+				let pDif = playersList[j][5][i][1];
+				console.log("BEST GAP "+bestGap);
+				console.log("PLAYER dIF "+pDif);
+				let gap = Math.abs(realDif - pDif);
+				if (gap <= bestGap) {
+					bestGap = gap;
+					console.log("----added "+playersList[j][i]);
+					difWinners.push(playersList[j]) //push name var
+				}
+			}
 
-	{'/': 0},
-	{'/': 0},
+			let printList = []
+			for (j=0; j < difWinners.length; j++) {
+				printList.push(difWinners[j][0]);
+			}
+			console.log("difWinner: "+printList);
 
-	{'/': 0}
-];
+			let difWinnersUntied = [];
+			if (difWinners.length > 1) {
+				// do tiebreaker
+				console.log("***tiebreaking");
+				let bestGap2 = 1000;
+				for (j=0; j < difWinners.length; j++) {
+					let pTot = difWinners[j][5][i][2];
+					let gap = Math.abs(realTot - pTot);
+					if (gap <= bestGap2) {
+						bestGap2 = gap;
+					}
+				}
+				for (j=0; j < difWinners.length; j++) {
+					let pTot = difWinners[j][5][i][2];
+					let gap = Math.abs(realTot - pTot);
+					if (gap <= bestGap2) {
+						bestGap2 = gap;
+						difWinnersUntied.push(difWinners[j]) //push name string
+					}
+				}
+			} else {
+				difWinnersUntied = difWinners;
+			}
+
+			let printList1 = []
+			for (j=0; j < difWinnersUntied.length; j++) {
+				printList1.push(difWinnersUntied[j][0]);
+			}
+			console.log("difWinnersUntied: "+printList1);
+
+			for (j=0; j < playersList.length; j++) { //award the players pts
+				if (difWinnersUntied.includes(playersList[j])) {
+					console.log("awarding player: "+playersList[j]);
+
+					playersList[j][2] += 1;
+					playersList[j][4] += 1;					
+				}
+			}
+			
+		}
+
+	}
+}
+
+
+function showScorePreds() {
+	var game_id;
+	for (i=0; i < REALscores.length; i++) {
+		let realTot = REALscores[i][1] + REALscores[i][2];
+		if (realTot == 0) { // find next unfinished game
+			game_id = i;
+			console.log("breaking: "+i);
+			break
+		}
+	}
+	let homeTeam = REALscores[game_id][0][0];
+	let awayTeam = REALscores[game_id][0][1];
+
+	let homeBG = "url(img/"+homeTeam+".png)";
+	let awayBG = "url(img/"+awayTeam+".png)";
+	
+	$(".realGame #home").css("background-image", homeBG);
+	$(".realGame #away").css("background-image", awayBG);
+	
+	let playersList = [andres, ap, fabian, diego, mami, papi];		
+	for (i=0; i < num_players; i++) {
+
+		let dif = playersList[i][5][game_id][1];
+		let tot = playersList[i][5][game_id][2];
+
+		console.log(" ");
+		console.log("dif: "+dif);
+		console.log("tot: "+tot);
+		let homePts;
+		let awayPts;
+
+		if (dif > 0) {
+			let half = (tot-dif)*.5;
+			homePts = dif+half;
+			awayPts = half;
+		} else if (dif < 0) {
+			dif = dif * (-1);
+			let half = (tot-dif)*.5;
+			awayPts = dif+half;
+			homePts = half;
+		}
+		if (tot == 1000) {
+			awayPts = "--";
+			homePts = "--";
+
+		}
+
+		$(".per"+i+" .home").text(homePts);
+		$(".per"+i+" .away").text(awayPts);
+	}
+}

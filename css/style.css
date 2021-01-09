@@ -2,6 +2,7 @@
     --blue-color: rgb(19, 46, 138);
     --teal-color: rgb(115, 239, 255);
 	--red-color: rgb(255, 71, 105);
+	--gray-color: rgb(222, 224, 228);
 	
 	--full-height: 480px;
 	--half-height: 240px;
@@ -249,6 +250,39 @@ input {
 .info span {
 	text-align: center;
 	/* display: block; */
+}
+
+#scoresScores {
+	width: 200px;
+	background-color: var(--gray-color);
+	color: var(--blue-color);
+}
+#home, #away {
+	width:160px;
+	height: 140px;
+	background-size: cover;
+	background-position: center;
+}
+#home {
+	background-color: RED;
+}
+#away {
+	background-color: greenyellow;
+}
+.nameScores {
+	background-color: var(--gray-color);
+	text-align: right;
+}
+.home, .away {
+	background-color: rgba(242, 244, 248,1)
+}
+#gameScore {
+	background-color: var(--gray-color);
+	display: block;
+	width: 100%;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	padding-bottom: 20px;
 }
 
 /* FOR SMALL SCREENS */
