@@ -70,7 +70,7 @@ var scores_andres = [
 	['BUF/IND', 10, 0],
 	['SEA/LAR', 3, 57],
 	['WAS/TB', -6, 40],
-	['TEN/BAL', 7, 55],
+	['TEN/BAL', 11, 53],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
 
@@ -125,7 +125,7 @@ var scores_diego = [
 	['SEA/LAR', 4, 27],
 	['WAS/TB', -10, 50],
 	['TEN/BAL', 4, 50],
-	['NO/CHI', 17, 1000, 38],
+	['NO/CHI', 17, 38],
 	['PIT/CLE', -4, 1000, 40],
 
 	['GB/', 100, 1000],
