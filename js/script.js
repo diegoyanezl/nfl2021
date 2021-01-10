@@ -69,7 +69,7 @@ const num_players = 6;
 var scores_andres = [
 	['BUF/IND', 10, 0],
 	['SEA/LAR', 3, 57],
-	['WAS/TB', 100, 1000],
+	['WAS/TB', -6, 40],
 	['TEN/BAL', 100, 1000],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
@@ -87,7 +87,7 @@ var scores_andres = [
 var scores_ap = [
 	['BUF/IND', 12, 0],
 	['SEA/LAR', 100, 1000],
-	['WAS/TB', 100, 1000],
+	['WAS/TB', 6, 36],
 	['TEN/BAL', 100, 1000],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
@@ -105,7 +105,7 @@ var scores_ap = [
 var scores_fabian = [
 	['BUF/IND', 10, 0],
 	['SEA/LAR', 11, 37],
-	['WAS/TB', 100, 1000],
+	['WAS/TB', 14, 45],
 	['TEN/BAL', 100, 1000],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
@@ -141,7 +141,7 @@ var scores_diego = [
 var scores_mami = [
 	['BUF/IND', 20, 0],
 	['SEA/LAR', 16, 44],
-	['WAS/TB', 100, 1000],
+	['WAS/TB', 23, 47],
 	['TEN/BAL', 100, 1000],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
@@ -159,7 +159,7 @@ var scores_mami = [
 var scores_papi = [
 	['BUF/IND', 14, 68],
 	['SEA/LAR', 11, 57],
-	['WAS/TB', 100, 1000],
+	['WAS/TB', -10, 56],
 	['TEN/BAL', 100, 1000],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
