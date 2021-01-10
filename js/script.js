@@ -1,6 +1,6 @@
 var rounds_so_far = 1; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
 var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
-	'GB', 'NO', 'CHI', 'SEA', 'LAR', 'WAS', 'TB',
+	'GB', 'NO', 'CHI', 'LAR', 'WAS', 'TB',
 	'KC', 'PIT', 'CLE', 'BUF', 'TEN', 'BAL'
 ];
 var REAL = [
@@ -23,7 +23,7 @@ var REAL = [
 ];
 var REALscores = [
 	[['BUF','IND'], 27, 24],
-	[['SEA','LAR'], 0, 0],
+	[['SEA','LAR'], 20,30],
 	[['WAS','TB'], 0, 0],
 	[['TEN','BAL'], 0, 0],
 	[['NO','CHI'], 0, 0],
@@ -363,21 +363,21 @@ function setInfo() {
 
 
 function scorePoints() {
-	console.log(" ");
-	console.log("_______ ");
-	console.log("RUNNING SCORE POINTS");
-	console.log("--------- ");
-	console.log(" ");
+	// console.log(" ");
+	// console.log("_______ ");
+	// console.log("RUNNING SCORE POINTS");
+	// console.log("--------- ");
+	// console.log(" ");
 	for (i=0; i < REALscores.length; i++) {
 		let game = REALscores[i];
 		let realDif = game[1] - game[2];
 		let realTot = game[1] + game[2];
-		console.log(" ");
-		console.log("_______ ");
-		console.log("CHECKING GAME "+i);
+		// console.log(" ");
+		// console.log("_______ ");
+		// console.log("CHECKING GAME "+i);
 		if (realTot != 0) { // only check finished games
-			console.log("continuing GAME "+i);
-			console.log("REALdIF "+realDif);
+			// console.log("continuing GAME "+i);
+			// console.log("REALdIF "+realDif);
 			
 			let playersList = [andres, ap, fabian, diego, mami, papi];
 			// console.log("1==pl  "+playersList);
@@ -392,26 +392,28 @@ function scorePoints() {
 			}
 			for (j=0; j < playersList.length; j++) {
 				let pDif = playersList[j][5][i][1];
-				console.log("BEST GAP "+bestGap);
-				console.log("PLAYER dIF "+pDif);
+				// console.log("BEST GAP "+bestGap);
+				// console.log("PLAYER dIF "+pDif);
 				let gap = Math.abs(realDif - pDif);
-				if (gap <= bestGap) {
+				let correct_winner = realDif * pDif;
+				
+				if (gap <= bestGap && (correct_winner > 0)) {
 					bestGap = gap;
-					console.log("----added "+playersList[j][i]);
+					// console.log("----added "+playersList[j][i]);
 					difWinners.push(playersList[j]) //push name var
 				}
 			}
 
-			let printList = []
-			for (j=0; j < difWinners.length; j++) {
-				printList.push(difWinners[j][0]);
-			}
-			console.log("difWinner: "+printList);
+			// let printList = []
+			// for (j=0; j < difWinners.length; j++) {
+			// 	printList.push(difWinners[j][0]);
+			// }
+			// console.log("difWinner: "+printList);
 
 			let difWinnersUntied = [];
 			if (difWinners.length > 1) {
 				// do tiebreaker
-				console.log("***tiebreaking");
+				// console.log("***tiebreaking");
 				let bestGap2 = 1000;
 				for (j=0; j < difWinners.length; j++) {
 					let pTot = difWinners[j][5][i][2];
@@ -432,16 +434,10 @@ function scorePoints() {
 				difWinnersUntied = difWinners;
 			}
 
-			let printList1 = []
-			for (j=0; j < difWinnersUntied.length; j++) {
-				printList1.push(difWinnersUntied[j][0]);
-			}
-			console.log("difWinnersUntied: "+printList1);
 
 			for (j=0; j < playersList.length; j++) { //award the players pts
 				if (difWinnersUntied.includes(playersList[j])) {
-					console.log("awarding player: "+playersList[j]);
-
+					// console.log("awarding player: "+playersList[j]);
 					playersList[j][2] += 1;
 					playersList[j][4] += 1;					
 				}
@@ -459,7 +455,7 @@ function showScorePreds() {
 		let realTot = REALscores[i][1] + REALscores[i][2];
 		if (realTot == 0) { // find next unfinished game
 			game_id = i;
-			console.log("breaking: "+i);
+			// console.log("breaking: "+i);
 			break
 		}
 	}
@@ -478,9 +474,9 @@ function showScorePreds() {
 		let dif = playersList[i][5][game_id][1];
 		let tot = playersList[i][5][game_id][2];
 
-		console.log(" ");
-		console.log("dif: "+dif);
-		console.log("tot: "+tot);
+		// console.log(" ");
+		// console.log("dif: "+dif);
+		// console.log("tot: "+tot);
 		let homePts;
 		let awayPts;
 
