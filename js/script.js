@@ -124,7 +124,7 @@ var scores_diego = [
 	['BUF/IND', 13, 0],
 	['SEA/LAR', 4, 27],
 	['WAS/TB', -10, 50],
-	['TEN/BAL', 3, 41],
+	['TEN/BAL', 3, 1000, 41],
 	['NO/CHI', 17, 38],
 	['PIT/CLE', -4, 32],
 
