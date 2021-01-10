@@ -5,7 +5,7 @@ var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
 ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
-		'nfcWorst', 
+		'LAR', 
 		'nfc2', 
 		'nfc3', 
 		'afcWorst', 
