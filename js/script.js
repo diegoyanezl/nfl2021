@@ -1,13 +1,13 @@
 var rounds_so_far = 1; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
 var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
-	'GB', 'NO', 'CHI', 'LAR', 'WAS', 'TB',
+	'GB', 'NO', 'CHI', 'LAR', 'TB',
 	'KC', 'PIT', 'CLE', 'BUF', 'TEN', 'BAL'
 ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
 		'LAR', 
 		'nfc2', 
-		'nfc3', 
+		'TB', 
 		'afcWorst', 
 		'BUF', 
 		'afc3',
