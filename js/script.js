@@ -105,7 +105,7 @@ var scores_ap = [
 var scores_fabian = [
 	['BUF/IND', 10, 0],
 	['SEA/LAR', 11, 37],
-	['WAS/TB', 14, 48],
+	['WAS/TB', -14, 48],
 	['TEN/BAL', 100, 1000],
 	['NO/CHI', 100, 1000],
 	['PIT/CLE', 100, 1000],
