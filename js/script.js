@@ -24,7 +24,7 @@ var REAL = [
 var REALscores = [
 	[['BUF','IND'], 27, 24],
 	[['SEA','LAR'], 20,30],
-	[['WAS','TB'], 23, 28],
+	[['WAS','TB'], 0, 0],
 	[['TEN','BAL'], 0, 0],
 	[['NO','CHI'], 0, 0],
 	[['PIT','CLE'], 0, 0],
