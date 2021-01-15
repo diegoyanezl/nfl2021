@@ -40,29 +40,6 @@ var REALscores = [
 	[['',''], 0, 0]
 ];
 
-console.log('VERSION: '+rounds_so_far+' --'+Math.random());
-
-
-window.onbeforeunload = function () {
-	window.scrollTo(0, 0);
-}
-
-function init() {
-	console.log("...Rendering");
-	update();
-	makeBlocksIntro();
-	setInfo();
-}
-
-const DIV_PTS = 3;
-const CONF_PTS = 4;
-const SB_PTS = 5;
-const CHAMP_PTS = 7;
-const SCORE_PTS = 1;
-const PLAYERS = [andres, ap, fabian, diego, mami, papi];
-const num_players = 6;
-
-
 
 // SCORE PREDICTIONS
 // [ game(for easier inputing), score dif(+Home win, -Away win), total pts(tiebreaker) ]
@@ -174,6 +151,32 @@ var scores_papi = [
 
 	['/', 100, 1000]
 ];
+
+console.log('VERSION: '+rounds_so_far+' --'+Math.random());
+
+
+window.onbeforeunload = function () {
+	window.scrollTo(0, 0);
+}
+
+function init() {
+	console.log("...Rendering");
+	update();
+	makeBlocksIntro();
+	setInfo();
+}
+
+const DIV_PTS = 3;
+const CONF_PTS = 4;
+const SB_PTS = 5;
+const CHAMP_PTS = 7;
+const SCORE_PTS = 1;
+const PLAYERS = [andres, ap, fabian, diego, mami, papi];
+const num_players = 6;
+
+
+
+
 // TEAM PREDICTIONS
 var preds_papi = [
 	['TB', 'NO', 'SEA', 'CLE', 'BUF', 'BAL'], // DIVISIONAL
@@ -211,14 +214,6 @@ var preds_andres = [
 	['SEA', 'KC'], // SUPER BOWL
 	['SEA'] // WINNER
 ];
-
-// var preds_TEMP = [
-// 	['NO/CHI', 'SEA/LAR', 'WAS/TB', 'PIT/CLE', 'BUF/IND', 'TEN/BAL'], // DIVISIONAL
-// 	['GB', '', 'KC', ''], // CONFERENCE
-// 	['', ''], // SUPER BOWL
-// 	[''] // WINNER
-// ];
-
 
 // var = ["Name", preds_name, Pts, TeamWins, ScoreWins, scores_name];
 var papi = ["Papi", preds_papi, 0, 0, 0, scores_papi];
