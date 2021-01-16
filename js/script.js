@@ -13,10 +13,10 @@ var REAL = [
 		'BAL',
 	], 
 	[ // CONFERENCE TEAMS
-		'nfc1', 
-		'nfc2', 
-		'afc1', 
-		'afc2'
+		'GB/NO/TB', 
+		'NO/TB/LAR', 
+		'KC/BUF/BAL', 
+		'BUF/BAL/CLE'
 	], 
 	['nfcSB', 'afcSB'],
 	['winner'] 
@@ -51,9 +51,9 @@ var scores_andres = [
 	['NO/CHI', 18, 46],
 	['PIT/CLE', 3, 53],
 
-	['GB/LAR', 100, 1000],
-	['BUF/CLE', 100, 1000],
-	['KC/BAL', 100, 1000],
+	['GB/LAR', 14, 50],
+	['BUF/BAL', 100, 1000],
+	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
 	['/', 100, 1000],
@@ -70,8 +70,8 @@ var scores_ap = [
 	['PIT/CLE', 100, 1000],
 
 	['GB/LAR', 100, 1000],
-	['BUF/CLE', 100, 1000],
-	['KC/BAL', 100, 1000],
+	['BUF/BAL', 100, 1000],
+	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
 	['/', 100, 1000],
@@ -88,8 +88,8 @@ var scores_fabian = [
 	['PIT/CLE', 3, 43],
 
 	['GB/LAR', 13, 55],
-	['BUF/CLE', 100, 1000],
-	['KC/BAL', 100, 1000],
+	['BUF/BAL', 100, 1000],
+	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
 	['/', 100, 1000],
@@ -124,8 +124,8 @@ var scores_mami = [
 	[['PIT','CLE'], 8, 50],
 
 	['GB/LAR', 100, 1000],
-	['BUF/CLE', 100, 1000],
-	['KC/BAL', 100, 1000],
+	['BUF/BAL', 100, 1000],
+	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
 	['/', 100, 1000],
@@ -141,9 +141,9 @@ var scores_papi = [
 	['NO/CHI', 15, 53],
 	['PIT/CLE', -7, 63],
 
-	['GB/LAR', 100, 1000],
-	['BUF/CLE', 100, 1000],
-	['KC/BAL', 100, 1000],
+	['GB/LAR', 10, 64],
+	['BUF/BAL', 4, 58],
+	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
 	['/', 100, 1000],
