@@ -87,7 +87,7 @@ var scores_fabian = [
 	['NO/CHI', 7, 47],
 	['PIT/CLE', 3, 43],
 
-	['GB/LAR', 100, 1000],
+	['GB/LAR', 13, 55],
 	['BUF/CLE', 100, 1000],
 	['KC/BAL', 100, 1000],
 	['NO/TB', 100, 1000],
