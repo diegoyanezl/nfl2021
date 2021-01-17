@@ -1,7 +1,7 @@
 var rounds_so_far = 2; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
 var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
 	'GB', 'NO', 'TB',
-	'KC', 'CLE', 'BUF'
+	'KC', 'BUF'
 ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
@@ -15,10 +15,10 @@ var REAL = [
 	[ // CONFERENCE TEAMS
 		'GB', 
 		'NO/TB', 
-		'KC/CLE', 
+		'KC', 
 		'BUF'
 	], 
-	['nfcSB', 'afcSB'],
+	['nfcSB', 'KC/BUF'],
 	['winner'] 
 ];
 var REALscores = [
@@ -31,7 +31,7 @@ var REALscores = [
 
 	[['GB','LAR'], 32, 18],
 	[['BUF','BAL'], 17, 3],
-	[['KC','CLE'], 0, 0],
+	[['KC','CLE'], 22, 17],
 	[['NO','TB'], 0, 0],
 
 	[['',''], 0, 0],
@@ -367,6 +367,12 @@ function scorePoints() {
 		let game = REALscores[i];
 		let realDif = game[1] - game[2];
 		let realTot = game[1] + game[2];
+		let realWinnerScore;
+		if (game[1] > game[2]) {
+			realWinnerScore = game[1];
+		} else if (game[1] < game[2]) {
+			realWinnerScore = game[2]; 
+		}
 		// console.log(" ");
 		// console.log("_______ ");
 		// console.log("CHECKING GAME "+i);
@@ -430,8 +436,38 @@ function scorePoints() {
 			}
 
 
+			// TIEBREAKER 2, CLOSEST WINNER SCORE
+			if (difWinnersUntied.length > 1) {
+				let difWinnersUntied2 = [];
+				// do tiebreaker 2
+				// console.log("***tiebreaking");
+				let bestGap3 = 1000;
+				for (j=0; j < difWinnersUntied.length; j++) {
+					let pDif = difWinnersUntied[j][5][i][1];
+					let pTot = difWinnersUntied[j][5][i][2];
+					let pWinnerScore = ((pTot-Math.abs(pDif))*.5) + Math.abs(pDif);
+					let gap = Math.abs(realWinnerScore - pWinnerScore);
+					if (gap <= bestGap3) {
+						bestGap3 = gap;
+					}
+				}
+				for (j=0; j < difWinnersUntied.length; j++) {
+					let pDif = difWinnersUntied[j][5][i][1];
+					let pTot = difWinnersUntied[j][5][i][2];
+					let pWinnerScore = ((pTot-Math.abs(pDif))*.5) + Math.abs(pDif);
+					let gap = Math.abs(realWinnerScore - pWinnerScore);
+					if (gap <= bestGap3) {
+						bestGap3 = gap;
+						difWinnersUntied2.push(difWinnersUntied[j]) //push name string
+					}
+				}
+			} else {
+				difWinnersUntied2 = difWinnersUntied;
+			}
+
+
 			for (j=0; j < playersList.length; j++) { //award the players pts
-				if (difWinnersUntied.includes(playersList[j])) {
+				if (difWinnersUntied2.includes(playersList[j])) {
 					// console.log("awarding player: "+playersList[j]);
 					playersList[j][2] += 1;
 					playersList[j][4] += 1;					
