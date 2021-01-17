@@ -52,7 +52,7 @@ var scores_andres = [
 	['PIT/CLE', 3, 53],
 
 	['GB/LAR', 14, 50],
-	['BUF/BAL', 11, 69],
+	['BUF/BAL', 11, 59],
 	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
