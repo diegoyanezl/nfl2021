@@ -435,10 +435,10 @@ function scorePoints() {
 				difWinnersUntied = difWinners;
 			}
 
-
+			
+			let difWinnersUntied2 = [];
 			// TIEBREAKER 2, CLOSEST WINNER SCORE
 			if (difWinnersUntied.length > 1) {
-				let difWinnersUntied2 = [];
 				// do tiebreaker 2
 				// console.log("***tiebreaking");
 				let bestGap3 = 1000;
