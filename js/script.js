@@ -90,7 +90,7 @@ var scores_fabian = [
 	['GB/LAR', 13, 55],
 	['BUF/BAL', 3, 51],
 	['KC/CLE', 3, 57],
-	['NO/TB', 100, 1000],
+	['NO/TB', 3, 57],
 
 	['/', 100, 1000],
 	['/', 100, 1000],
@@ -108,7 +108,7 @@ var scores_diego = [
 	['GB/LAR', 10, 54],
 	['BUF/BAL', -4, 64],
 	['KC/CLE', 7, 61],
-	['NO/TB', 100, 1000],
+	['NO/TB', 5, 53],
 
 	['/', 100, 1000],
 	['/', 100, 1000],
@@ -144,7 +144,7 @@ var scores_papi = [
 	['GB/LAR', 10, 64],
 	['BUF/BAL', 4, 58],
 	['KC/CLE', 7, 57],
-	['NO/TB', 100, 1000],
+	['NO/TB', 4, 60],
 
 	['/', 100, 1000],
 	['/', 100, 1000],
@@ -152,7 +152,7 @@ var scores_papi = [
 	['/', 100, 1000]
 ];
 
-console.log('VERSION: '+rounds_so_far+' --'+Math.random());
+console.log('VERSION: '+rounds_so_far+' --314');
 
 
 window.onbeforeunload = function () {
