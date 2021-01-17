@@ -1,6 +1,6 @@
 var rounds_so_far = 1; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
 var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
-	'GB', 'NO', 'LAR', 'TB',
+	'GB', 'NO', 'TB',
 	'KC', 'CLE', 'BUF', 'BAL'
 ];
 var REAL = [
@@ -13,8 +13,8 @@ var REAL = [
 		'BAL',
 	], 
 	[ // CONFERENCE TEAMS
-		'GB/NO/TB', 
-		'NO/TB/LAR', 
+		'GB', 
+		'NO/TB', 
 		'KC/BUF/BAL', 
 		'BUF/BAL/CLE'
 	], 
@@ -29,7 +29,7 @@ var REALscores = [
 	[['NO','CHI'], 21, 9],
 	[['PIT','CLE'], 37, 48],
 
-	[['GB','LAR'], 0, 0],
+	[['GB','LAR'], 32, 18],
 	[['BUF','CLE'], 0, 0],
 	[['KC','BAL'], 0, 0],
 	[['NO','TB'], 0, 0],
