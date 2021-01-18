@@ -7,7 +7,7 @@ var REAL = [
 		'TB', 
 		'CLE', 
 		'BUF', 
-		'BAL',
+		'BAL'
 	], 
 	[ // CONFERENCE TEAMS
 		'GB', 
@@ -107,8 +107,8 @@ var scores_diego = [
 	['KC/CLE', 7, 61],
 	['NO/TB', 5, 53],
 
-	['GB/TB', 100, 1000],
-	['KC/BUF', 100, 1000],
+	['GB/TB', 100, 1000, 7, 55],
+	['KC/BUF', 100, 1000, 12, 52],
 
 	['/', 100, 1000]
 ];
