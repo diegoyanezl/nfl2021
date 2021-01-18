@@ -1,8 +1,5 @@
 var rounds_so_far = 2; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
-var ALIVEtms = [ // DELETE TEAM WHEN THEY LOSE, FOR BLOCK UPDATING
-	'GB', 'NO', 'TB',
-	'KC', 'BUF'
-];
+var ALIVEtms = [ 'GB', 'TB','KC', 'BUF' ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
 		'LAR', 
@@ -14,11 +11,11 @@ var REAL = [
 	], 
 	[ // CONFERENCE TEAMS
 		'GB', 
-		'NO/TB', 
+		'TB', 
 		'KC', 
 		'BUF'
 	], 
-	['nfcSB', 'KC/BUF'],
+	['GB/TB', 'KC/BUF'],
 	['winner'] 
 ];
 var REALscores = [
@@ -32,10 +29,10 @@ var REALscores = [
 	[['GB','LAR'], 32, 18],
 	[['BUF','BAL'], 17, 3],
 	[['KC','CLE'], 22, 17],
-	[['NO','TB'], 0, 0],
+	[['NO','TB'], 20, 30],
 
-	[['',''], 0, 0],
-	[['',''], 0, 0],
+	[['GB','TB'], 0, 0],
+	[['KC','BUF'], 0, 0],
 
 	[['',''], 0, 0]
 ];
@@ -56,8 +53,8 @@ var scores_andres = [
 	['KC/CLE', 100, 1000],
 	['NO/TB', 10, 44],
 
-	['/', 100, 1000],
-	['/', 100, 1000],
+	['GB/TB', 100, 1000],
+	['KC/BUF', 100, 1000],
 
 	['/', 100, 1000]
 ];
@@ -74,8 +71,8 @@ var scores_ap = [
 	['KC/CLE', 100, 1000],
 	['NO/TB', 100, 1000],
 
-	['/', 100, 1000],
-	['/', 100, 1000],
+	['GB/TB', 100, 1000],
+	['KC/BUF', 100, 1000],
 
 	['/', 100, 1000]
 ];
@@ -92,8 +89,8 @@ var scores_fabian = [
 	['KC/CLE', 3, 57],
 	['NO/TB', 3, 57],
 
-	['/', 100, 1000],
-	['/', 100, 1000],
+	['GB/TB', 100, 1000],
+	['KC/BUF', 100, 1000],
 
 	['/', 100, 1000]
 ];
@@ -110,8 +107,8 @@ var scores_diego = [
 	['KC/CLE', 7, 61],
 	['NO/TB', 5, 53],
 
-	['/', 100, 1000],
-	['/', 100, 1000],
+	['GB/TB', 100, 1000],
+	['KC/BUF', 100, 1000],
 
 	['/', 100, 1000]
 ];
@@ -128,8 +125,8 @@ var scores_mami = [
 	['KC/CLE', 17, 53 ],
 	['NO/TB', 15, 41],
 
-	['/', 100, 1000],
-	['/', 100, 1000],
+	['GB/TB', 100, 1000],
+	['KC/BUF', 100, 1000],
 
 	['/', 100, 1000]
 ];
@@ -146,8 +143,8 @@ var scores_papi = [
 	['KC/CLE', 7, 57],
 	['NO/TB', 4, 60],
 
-	['/', 100, 1000],
-	['/', 100, 1000],
+	['GB/TB', 100, 1000],
+	['KC/BUF', 100, 1000],
 
 	['/', 100, 1000]
 ];
