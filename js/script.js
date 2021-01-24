@@ -1,4 +1,4 @@
-var rounds_so_far = 2; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
+var rounds_so_far = 3; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
 var ALIVEtms = [ 'GB', 'TB','KC', 'BUF' ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
@@ -107,8 +107,8 @@ var scores_diego = [
 	['KC/CLE', 7, 61],
 	['NO/TB', 5, 53],
 
-	['GB/TB', 100, 1000, 7, 55],
-	['KC/BUF', 100, 1000, 12, 52],
+	['GB/TB', 9, 65],
+	['KC/BUF', 4, 54],
 
 	['/', 100, 1000]
 ];
@@ -125,8 +125,8 @@ var scores_mami = [
 	['KC/CLE', 17, 53 ],
 	['NO/TB', 15, 41],
 
-	['GB/TB', 100, 1000],
-	['KC/BUF', 100, 1000],
+	['GB/TB', 17, 59],
+	['KC/BUF', 14, 42],
 
 	['/', 100, 1000]
 ];
@@ -143,8 +143,8 @@ var scores_papi = [
 	['KC/CLE', 7, 57],
 	['NO/TB', 4, 60],
 
-	['GB/TB', 100, 1000],
-	['KC/BUF', 100, 1000],
+	['GB/TB', 7, 61],
+	['KC/BUF', -3, 51],
 
 	['/', 100, 1000]
 ];
