@@ -1,5 +1,5 @@
 var rounds_so_far = 3; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
-var ALIVEtms = [ 'GB', 'TB','KC', 'BUF' ];
+var ALIVEtms = [ 'TB','KC', 'BUF' ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
 		'LAR', 
@@ -31,7 +31,7 @@ var REALscores = [
 	[['KC','CLE'], 22, 17],
 	[['NO','TB'], 20, 30],
 
-	[['GB','TB'], 0, 0],
+	[['GB','TB'], 26, 31],
 	[['KC','BUF'], 0, 0],
 
 	[['',''], 0, 0]
