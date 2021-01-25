@@ -16,7 +16,7 @@ var REAL = [
 		'BUF'
 	], 
 	['TB', 'KC'],
-	['winner'] 
+	['TB/KC'] 
 ];
 var REALscores = [
 	[['BUF','IND'], 27, 24],
@@ -34,7 +34,7 @@ var REALscores = [
 	[['GB','TB'], 26, 31],
 	[['KC','BUF'], 38, 24],
 
-	[['TB','KC'], 0, 0]
+	[['TB','KC'], 0, 0, "MVP??"]
 ];
 
 
@@ -56,7 +56,7 @@ var scores_andres = [
 	['GB/TB', 7, 41],
 	['KC/BUF', -7, 55],
 
-	['/', 100, 1000]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_ap = [
 	['BUF/IND', 12, 0],
@@ -74,7 +74,7 @@ var scores_ap = [
 	['GB/TB', 100, 1000],
 	['KC/BUF', 100, 1000],
 
-	['/', 100, 1000]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_fabian = [
 	['BUF/IND', 10, 0],
@@ -92,7 +92,7 @@ var scores_fabian = [
 	['GB/TB', 3, 65],
 	['KC/BUF', 7, 53],
 
-	['/', 100, 1000]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_diego = [
 	['BUF/IND', 13, 0],
@@ -110,7 +110,7 @@ var scores_diego = [
 	['GB/TB', 9, 65],
 	['KC/BUF', 4, 54],
 
-	['/', 100, 1000]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_mami = [
 	['BUF/IND', 20, 0],
@@ -128,7 +128,7 @@ var scores_mami = [
 	['GB/TB', 17, 59],
 	['KC/BUF', 14, 42],
 
-	['/', 100, 1000]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_papi = [
 	['BUF/IND', 14, 68],
@@ -146,7 +146,7 @@ var scores_papi = [
 	['GB/TB', 7, 61],
 	['KC/BUF', -3, 51],
 
-	['/', 100, 1000]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 
 console.log('VERSION: '+rounds_so_far+' --314');
@@ -501,6 +501,7 @@ function showScorePreds() {
 
 		let dif = playersList[i][5][game_id][1];
 		let tot = playersList[i][5][game_id][2];
+		let mvp = playersList[i][5][game_id][3];
 
 		// console.log(" ");
 		// console.log("dif: "+dif);
@@ -526,5 +527,6 @@ function showScorePreds() {
 
 		$(".per"+i+" .home").text(homePts);
 		$(".per"+i+" .away").text(awayPts);
+		$(".per"+i+" .mvp").text(mvp);
 	}
 }

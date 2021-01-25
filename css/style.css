@@ -254,7 +254,12 @@ input {
 	background-color: var(--gray-color);
 	color: var(--blue-color);
 }
-#home, #away {
+#scoresScores2 {
+	width: 180px;
+	background-color: var(--gray-color);
+	color: var(--blue-color);
+}
+#home, #away, #mvp {
 	width:160px;
 	height: 140px;
 	background-size: cover;
@@ -266,12 +271,17 @@ input {
 #away {
 	background-color: greenyellow;
 }
+#mvp {
+	width:220px;
+	font-size:70px;
+}
 .nameScores {
 	background-color: var(--gray-color);
 	text-align: right;
 }
-.home, .away {
-	background-color: rgba(242, 244, 248,1)
+.home, .away, .mvp {
+	background-color: rgba(242, 244, 248,1);
+	color: var(--blue-color);
 }
 #gameScore {
 	background-color: var(--gray-color);
@@ -341,6 +351,14 @@ th, tr {
 		margin-bottom: 300px;
 	}
 
+	#scoresScores2 {
+		width: 20px;
+		background-color: var(--gray-color);
+		color: var(--blue-color);
+	}
+	.mvp {
+		font-size: 40px;
+	}
 	/* HORIZONTAL SMALL SCREEN */
     @media (orientation: landscape) {
         .bar, .bar2 {
