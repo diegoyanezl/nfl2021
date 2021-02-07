@@ -56,7 +56,7 @@ var scores_andres = [
 	['GB/TB', 7, 41],
 	['KC/BUF', -7, 55],
 
-	['TB/KC', 101, 1000, "MVP"]
+	['TB/KC', -100, 10100, "MVP"]
 ];
 var scores_ap = [
 	['BUF/IND', 12, 0],
@@ -74,7 +74,7 @@ var scores_ap = [
 	['GB/TB', 100, 1000],
 	['KC/BUF', 100, 1000],
 
-	['TB/KC', 10000, 1000, "MVP"]
+	['TB/KC', 1000, 11000, "MVP"]
 ];
 var scores_fabian = [
 	['BUF/IND', 10, 0],
@@ -110,7 +110,7 @@ var scores_diego = [
 	['GB/TB', 9, 65],
 	['KC/BUF', 4, 54],
 
-	['TB/KC', 27, 31, "MVP"]
+	['TB/KC', -4, 58, "MVP??"]
 ];
 var scores_mami = [
 	['BUF/IND', 20, 0],
