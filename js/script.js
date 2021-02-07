@@ -34,7 +34,7 @@ var REALscores = [
 	[['GB','TB'], 26, 31],
 	[['KC','BUF'], 38, 24],
 
-	[['TB','KC'], 0, 0, "MVP??"]
+	[['TB','KC'], 0, 1, "MVP??"]
 ];
 
 
@@ -56,7 +56,7 @@ var scores_andres = [
 	['GB/TB', 7, 41],
 	['KC/BUF', -7, 55],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', 101, 1000, "MVP"]
 ];
 var scores_ap = [
 	['BUF/IND', 12, 0],
@@ -74,7 +74,7 @@ var scores_ap = [
 	['GB/TB', 100, 1000],
 	['KC/BUF', 100, 1000],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', 10000, 1000, "MVP"]
 ];
 var scores_fabian = [
 	['BUF/IND', 10, 0],
