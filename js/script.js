@@ -74,7 +74,7 @@ var scores_ap = [
 	['GB/TB', 100, 1000],
 	['KC/BUF', 100, 1000],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', -8, 56, "Mathieu"]
 ];
 var scores_fabian = [
 	['BUF/IND', 10, 0],
