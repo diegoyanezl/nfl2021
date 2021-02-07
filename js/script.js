@@ -34,7 +34,7 @@ var REALscores = [
 	[['GB','TB'], 26, 31],
 	[['KC','BUF'], 38, 24],
 
-	[['TB','KC'], 0, 1, "MVP??"]
+	[['TB','KC'], 1, 2, "MVP??"]
 ];
 
 
@@ -602,7 +602,7 @@ function showScorePreds() {
 		let realTot = REALscores[i][1] + REALscores[i][2];
 		if (realTot == 0) { // find next unfinished game
 			game_id = i;
-			// console.log("breaking: "+i);
+			console.log("breaking: "+i);
 			break
 		}
 	}
