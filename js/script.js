@@ -1,4 +1,4 @@
-var rounds_so_far = 3; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
+var rounds_so_far = 4; // after wc-1, after div-2, after conf-3, after sb-4, FOR POINT KEEPING
 var ALIVEtms = [ 'TB','KC' ];
 var REAL = [
 	[ // DIVISIONAL TEAMS
@@ -110,7 +110,7 @@ var scores_diego = [
 	['GB/TB', 9, 65],
 	['KC/BUF', 4, 54],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', 27, 31, "MVP"]
 ];
 var scores_mami = [
 	['BUF/IND', 20, 0],
@@ -168,6 +168,8 @@ const CONF_PTS = 4;
 const SB_PTS = 5;
 const CHAMP_PTS = 7;
 const SCORE_PTS = 1;
+const superBowlWinnerPts = 2;
+const superBowlClosestPts = 3;
 const PLAYERS = [andres, ap, fabian, diego, mami, papi];
 const num_players = 6;
 
@@ -360,7 +362,11 @@ function scorePoints() {
 	// console.log("RUNNING SCORE POINTS");
 	// console.log("--------- ");
 	// console.log(" ");
-	for (i=0; i < REALscores.length; i++) {
+	var num_games = REALscores.length;
+	if (num_games > 12) {
+		num_games = 12;
+	}
+	for (i=0; i < num_games; i++) {
 		let game = REALscores[i];
 		let realDif = game[1] - game[2];
 		let realTot = game[1] + game[2];
@@ -467,14 +473,118 @@ function scorePoints() {
 				if (difWinnersUntied2.includes(playersList[j])) {
 					// console.log("awarding player: "+playersList[j]);
 					playersList[j][2] += 1;
-					playersList[j][4] += 1;					
+					playersList[j][4] += 1;	
 				}
 			}
 			
 		}
 
 	}
+	superBowlPoints();
 }
+
+function superBowlPoints() {
+	let i = 12;
+	let game = REALscores[i];
+	console.log("is this super bowl?" +game);
+	let realDif = game[1] - game[2];
+	let realTot = game[1] + game[2];
+	let realWinnerScore;
+	if (game[1] > game[2]) {
+		realWinnerScore = game[1];
+	} else if (game[1] < game[2]) {
+		realWinnerScore = game[2]; 
+	}
+	if (realTot != 0) { // only check finished game
+		let playersList = [andres, ap, fabian, diego, mami, papi];
+		let difWinners = [];
+		let bestGap = 1000;
+		for (j=0; j < playersList.length; j++) {
+			let pDif = playersList[j][5][i][1];
+			let gap = Math.abs(realDif - pDif);
+			if (gap <= bestGap) {
+				bestGap = gap;
+			}
+		}
+		for (j=0; j < playersList.length; j++) {
+			let pDif = playersList[j][5][i][1];
+			// console.log("BEST GAP "+bestGap);
+			// console.log("PLAYER dIF "+pDif);
+			let gap = Math.abs(realDif - pDif);
+			let correct_winner = realDif * pDif;
+
+			if (gap <= bestGap && (correct_winner > 0)) {
+				bestGap = gap;
+				difWinners.push(playersList[j]) //push name var
+			}
+		}
+		let difWinnersUntied = [];
+		if (difWinners.length > 1) {
+			let bestGap2 = 1000;
+			for (j=0; j < difWinners.length; j++) {
+				let pTot = difWinners[j][5][i][2];
+				let gap = Math.abs(realTot - pTot);
+				if (gap <= bestGap2) {
+					bestGap2 = gap;
+				}
+			}
+			for (j=0; j < difWinners.length; j++) {
+				let pTot = difWinners[j][5][i][2];
+				let gap = Math.abs(realTot - pTot);
+				if (gap <= bestGap2) {
+					bestGap2 = gap;
+					difWinnersUntied.push(difWinners[j]) //push name string
+				}
+			}
+		} else {
+			difWinnersUntied = difWinners;
+		}
+		let difWinnersUntied2 = [];
+		// TIEBREAKER 2, CLOSEST WINNER SCORE
+		if (difWinnersUntied.length > 1) {
+			let bestGap3 = 1000;
+			for (j=0; j < difWinnersUntied.length; j++) {
+				let pDif = difWinnersUntied[j][5][i][1];
+				let pTot = difWinnersUntied[j][5][i][2];
+				let pWinnerScore = ((pTot-Math.abs(pDif))*.5) + Math.abs(pDif);
+				let gap = Math.abs(realWinnerScore - pWinnerScore);
+				if (gap <= bestGap3) {
+					bestGap3 = gap;
+				}
+			}
+			for (j=0; j < difWinnersUntied.length; j++) {
+				let pDif = difWinnersUntied[j][5][i][1];
+				let pTot = difWinnersUntied[j][5][i][2];
+				let pWinnerScore = ((pTot-Math.abs(pDif))*.5) + Math.abs(pDif);
+				let gap = Math.abs(realWinnerScore - pWinnerScore);
+				if (gap <= bestGap3) {
+					bestGap3 = gap;
+					difWinnersUntied2.push(difWinnersUntied[j]) //push name string
+				}
+			}
+		} else {
+			difWinnersUntied2 = difWinnersUntied;
+		}
+		for (j=0; j < playersList.length; j++) { //award the players pts
+			if (difWinnersUntied2.includes(playersList[j])) {
+				// console.log("awarding player: "+playersList[j]);
+				playersList[j][2] += superBowlClosestPts;
+				playersList[j][4] += 1;	
+			}
+		}
+	}
+	for (j=0; j < playersList.length; j++) {
+		let pDif = playersList[j][5][i][1];
+		let gap = Math.abs(realDif - pDif);
+		let correct_winner = realDif * pDif;
+
+		if (correct_winner > 0) {
+			playersList[j][2] += superBowlWinnerPts;
+		}
+	}
+}
+
+
 
 
 function showScorePreds() {
