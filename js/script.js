@@ -360,7 +360,7 @@ function setInfo() {
 function scorePoints() {
 	// console.log(" ");
 	// console.log("_______ ");
-	// console.log("RUNNING SCORE POINTS");
+	console.log("RUNNING SCORE POINTS");
 	// console.log("--------- ");
 	// console.log(" ");
 	var num_games = REALscores.length;
@@ -485,6 +485,7 @@ function scorePoints() {
 }
 
 function superBowlPoints() {
+	console.log("RUNNING sb POINTS");
 	let i = 12;
 	let game = REALscores[i];
 	console.log("is this super bowl?" +game);
@@ -497,6 +498,7 @@ function superBowlPoints() {
 		realWinnerScore = game[2]; 
 	}
 	if (realTot != 0) { // only check finished game
+		console.log("RUNNING game score sb");
 		let playersList = [andres, ap, fabian, diego, mami, papi];
 		let difWinners = [];
 		let bestGap = 1000;
@@ -574,6 +576,7 @@ function superBowlPoints() {
 			}
 		}
 	}
+	console.log("all points sb");
 	let playersList = [andres, ap, fabian, diego, mami, papi];
 	for (j=0; j < playersList.length; j++) {
 		let pDif = playersList[j][5][i][1];
