@@ -574,6 +574,7 @@ function superBowlPoints() {
 			}
 		}
 	}
+	let playersList = [andres, ap, fabian, diego, mami, papi];
 	for (j=0; j < playersList.length; j++) {
 		let pDif = playersList[j][5][i][1];
 		let gap = Math.abs(realDif - pDif);
