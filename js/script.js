@@ -170,6 +170,7 @@ const CHAMP_PTS = 7;
 const SCORE_PTS = 1;
 const superBowlWinnerPts = 2;
 const superBowlClosestPts = 3;
+const superBowlMvpPts = 1;
 const PLAYERS = [andres, ap, fabian, diego, mami, papi];
 const num_players = 6;
 
@@ -580,6 +581,13 @@ function superBowlPoints() {
 
 		if (correct_winner > 0) {
 			playersList[j][2] += superBowlWinnerPts;
+		}
+		
+		let correct_mvp = game[3];
+		let p_mvp = playersList[j][5][i][3];
+		console.log("MVP:" +correct_mvp);
+		if (correct_mvp == p_mvp) {
+			playersList[j][2] += superBowlMvpPts;
 		}
 	}
 }
