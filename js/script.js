@@ -34,7 +34,7 @@ var REALscores = [
 	[['GB','TB'], 26, 31],
 	[['KC','BUF'], 38, 24],
 
-	[['TB','KC'], 1, 2, "MVP??"]
+	[['TB','KC'], 0, 0, "MVP??"]
 ];
 
 
@@ -56,7 +56,7 @@ var scores_andres = [
 	['GB/TB', 7, 41],
 	['KC/BUF', -7, 55],
 
-	['TB/KC', -100, 10100, "MVP"]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_ap = [
 	['BUF/IND', 12, 0],
@@ -74,7 +74,7 @@ var scores_ap = [
 	['GB/TB', 100, 1000],
 	['KC/BUF', 100, 1000],
 
-	['TB/KC', 1000, 11000, "MVP"]
+	['TB/KC', 100, 1000, "MVP"]
 ];
 var scores_fabian = [
 	['BUF/IND', 10, 0],
@@ -110,7 +110,7 @@ var scores_diego = [
 	['GB/TB', 9, 65],
 	['KC/BUF', 4, 54],
 
-	['TB/KC', -4, 58, "MVP??"]
+	['TB/KC', -4, 58, "Kelce"]
 ];
 var scores_mami = [
 	['BUF/IND', 20, 0],
@@ -146,7 +146,7 @@ var scores_papi = [
 	['GB/TB', 7, 61],
 	['KC/BUF', -3, 51],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', -8, 78, "Hill"]
 ];
 
 console.log('VERSION: '+rounds_so_far+' --314');
