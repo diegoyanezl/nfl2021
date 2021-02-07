@@ -600,7 +600,9 @@ function showScorePreds() {
 	var game_id;
 	for (i=0; i < REALscores.length; i++) {
 		let realTot = REALscores[i][1] + REALscores[i][2];
-		if (realTot == 0) { // find next unfinished game
+		if (i == 12) {
+			game_id = 12;
+		} else if (realTot == 0) { // find next unfinished game
 			game_id = i;
 			console.log("breaking: "+i);
 			break
