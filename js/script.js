@@ -92,7 +92,7 @@ var scores_fabian = [
 	['GB/TB', 3, 65],
 	['KC/BUF', 7, 53],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', 4, 64, "Evans"]
 ];
 var scores_diego = [
 	['BUF/IND', 13, 0],
@@ -128,7 +128,7 @@ var scores_mami = [
 	['GB/TB', 17, 59],
 	['KC/BUF', 14, 42],
 
-	['TB/KC', 100, 1000, "MVP"]
+	['TB/KC', -7, 61, "Hill"]
 ];
 var scores_papi = [
 	['BUF/IND', 14, 68],
